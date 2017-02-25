@@ -65,7 +65,7 @@ set the passwordAuthentincation yes in `/etc/ssh/sshd_config`
 
 restart the ssh service `sudo service ssh restart`
 
-SSH into the server through the local machine using `ssh -v grader@54.83.173.92`
+SSH into the server through the local machine using `ssh -v grader@174.138.79.17`
 
 Configure public key on server.
    As the `grader` user paste `.pub` file contents in to `.ssh/authorized_key` file
