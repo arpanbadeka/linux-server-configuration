@@ -1,11 +1,11 @@
 # linux-server-configuration
 ### Server Details
 
-Server IP address: 54.83.173.92
+Server IP address: 174.138.79.17
 
 SSH port: 2200
 
-Application URL: http://54.83.173.92/
+Application URL: http://174.138.79.17/
 
 
 ### Software Installed
@@ -231,7 +231,7 @@ sudo pip install oauth2client
 sudo pip install requests
 ```
 
-Create a wsgi file entry point to work with mod_wsgi
+Create a myapp.wsgi file entry point to work with mod_wsgi
 ```sh
 #!/usr/bin/python
 import sys
@@ -240,6 +240,7 @@ logging.basicConfig(stream=sys.stderr)
 sys.path.insert(0,"/var/www/catalog/catalog")
 
 from catalog import app as application
+application.secret_key = 'supersecret'
 ```
 
 Update last line of `/etc/apache2/sites-enabled/000-default.conf` to handle requests using the WSGI module, add the following line right before the closing </VirtualHost> line:
